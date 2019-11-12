@@ -135,12 +135,13 @@ else:
     #numpy_array = numpy_array.transpose()
     #1024 > 512
     #512 > 10
-    hidden_layer = model.layers[1].get_weights()[0]
+    
+    hidden_layer = model.layers[2].get_weights()[0]
     first_layer = model.layers[0].get_weights()[0]
     
     array = first_layer @ hidden_layer
 
-
+    array = array.transpose()
 
     for i in range(10):
         if sys.argv[2] == '0':
